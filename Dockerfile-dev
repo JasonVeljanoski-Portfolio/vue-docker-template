@@ -1,0 +1,17 @@
+# base image
+FROM node:15.2.1-alpine3.10
+
+# set working directory
+RUN mkdir /app
+WORKDIR /app
+
+# install and cache app dependencies
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+EXPOSE 8080
+
+# start app
+CMD ["npm", "run", "serve"]
