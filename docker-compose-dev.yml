@@ -1,0 +1,14 @@
+version: '2'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    command: npm run serve
+    volumes:
+      - .:/app/
+      - /app/node_modules
+    ports:
+      - "8080:8080"
+    environment:               
+      - CHOKIDAR_USEPOLLING=true    # to enable hot reload when developing

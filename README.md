@@ -18,6 +18,11 @@ This application is dockerised. If you run `Dockerfile`, the application will ru
 $ docker build -t client .
 $ docker run -p 8080:80 -it --rm --name client client
 ```
+Or from the `docker-compose.yml` file
+
+```{bash}
+$ docker-compose up # this file does not perform how intended --fix
+```
 
 ## Run in Development Mode
 
@@ -26,4 +31,10 @@ This application is dockerised. If you run `Dockerfile-dev`, the application wil
 ```{bash}
 $ docker build -t client -f Dockerfile-dev .
 $ docker run -p 8080:8080 -it --rm --name client client
+```
+
+Or from the `docker-compose.yml` file
+
+```{bash}
+$ docker-compose -f docker-compose-dev.yml up
 ```
