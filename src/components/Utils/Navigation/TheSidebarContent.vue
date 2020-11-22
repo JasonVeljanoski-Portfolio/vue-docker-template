@@ -14,9 +14,14 @@
     <!-- NAVS -->
     <nav @click="toggle" class="navigation-items">
       <ul class="nav-list">
-        <li v-for="nav in navItems" :key="nav" class="nav-item">
-          <router-link class="link" :to="nav.slug">{{ nav.name }}</router-link>
-        </li>
+        <router-link
+          class="link"
+          v-for="nav in navItems"
+          :key="nav"
+          :to="nav.slug"
+        >
+          <li class="nav-item">{{ nav.name }}</li>
+        </router-link>
       </ul>
     </nav>
 
@@ -111,7 +116,7 @@ a
 .link:hover
   color $grey
 
-.nuxt-link-exact-active
+.router-link-exact-active .nav-item
   font-weight 400
   color $blue !important
 </style>
